@@ -1,0 +1,17 @@
+name: my second workflow
+
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  myfirsJob:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo "Hello world  developer"
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+      - name: List files in the repository
+        run: |
+          echo "The repository file ${{github.repository}} contains the following files:" tree
+      
